@@ -1,0 +1,24 @@
+@mixin col-div($sz, $spans...) {
+    @each $i in $spans {
+        .col#{$sz}-#{$i}
+            {width: round($i * 10000% / 12) / 100;}
+    }
+}
+
+@mixin small {
+    @media only screen and (max-width: 599px){
+        @content;
+    }
+}
+
+@mixin medium {
+    @media only screen and (min-width: 600px) and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media only screen and (min-width: 1024px) {
+        @content;
+    }
+}

@@ -1,0 +1,144 @@
+$bor: 2px;
+$sec-pad: 15px;
+$fs-default: 16px;
+$fs-section: $fs-default * 1.5;
+$fs-title: $fs-default * 2;
+
+* {
+    box-sizing: border-box;
+    font-size: $fs-default;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@import "_mixins";
+
+@include small {
+    @include col-div(-s, 1, 2, 3, 4, 6, 12);
+}
+
+@include medium {
+    @include col-div(-m, 1, 2, 3, 4, 6, 12);
+}
+
+@include large {
+    @include col-div(-l, 1, 2, 3, 4, 6, 12);
+}
+
+@include col-div(-a, 6);
+
+
+@import "_colors";
+
+div.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.wrapper {
+    padding: $sec-pad;
+    position: relative;
+}
+
+div.outer {
+    background-color: $bg-beige;
+    border: $bor solid;
+    height: 100%;
+}
+
+div.inner {
+    border-style: solid;
+    border-width: 0 0 $bor $bor;
+    font-size: $fs-section;
+    text-align: center;
+    padding: 5px;
+    right: $sec-pad+$bor;
+    position: absolute;
+}
+
+div.text {
+    margin: 25px;
+    margin-top: 75px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    .logo {
+        width: 60px;
+    }
+    a {
+        font-size: $fs-title;
+        margin-left: 15px;
+        @include small {display: none;}
+    }
+}
+
+div.header {
+    display: grid;
+    grid-template-columns: 60% repeat(5, 1fr);
+    * {
+        font-family: 'Times New Roman', Times, serif;
+        white-space: nowrap;
+    }
+    a.item {
+        display: none;
+        @include large {display: inline;}
+        text-align: center;
+    }
+    position: relative;
+    margin: $sec-pad;
+}
+
+footer {
+    background-color: $bg-beige;
+    border-style: solid;
+    border-width: $bor 0 0 0;
+
+    min-height: 100px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        text-align: center;
+    }
+}
+
+#list-button {
+    @include large {display: none;}
+    background-color: $bg-beige;
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    border: 2px solid;
+    padding: 17px 12px 0 12px;
+    &::after {
+        content: "";
+        display:block;
+        height: 2px;
+        background-color: black;
+        box-shadow: 0 10px,
+        0 20px;
+    }
+    position: absolute;
+    right: 0;
+}
+
+#not-footer {
+    margin: $sec-pad;
+}
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

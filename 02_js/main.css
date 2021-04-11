@@ -1,0 +1,48 @@
+.main-tb {
+    width: 100%;
+    margin-top: 10px;
+}
+
+a, input[type=text] {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    width: 100%;
+}
+
+button {
+    min-width: 100px;
+    min-height: 30px;
+}
+
+
+.main-tb tr {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main-tb tr:nth-child(even) td {
+    background-color: lightblue;
+}
+
+.main-tb tr td {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    margin: 2px;
+    padding: 5px;
+    align-items:center;
+}
+.main-tb tr td a {
+    margin-left: 9px;
+}
+
+.tb-hdr {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+.main-tb tr.tb-hdr td {
+    justify-content: center;
+    font-weight: bold;
+    height: 100%;
+    background-color: transparent;
+}

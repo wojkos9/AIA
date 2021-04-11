@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(()=>{
+            $('td').one('click', edit);
+            $('button').bind('asdf', function() { alert('The cake is a lie!'); });
+            $('button').trigger('asdf');
+            $('*').unbind();
+        });
+        function edit() {
+            let e = $(this);
+            let v = e.text();
+            e.html('<input type="text" id="edit" value="'+v+'"></input>');
+            let f = $("#edit");
+            f.focus();
+            f.one('blur', (g)=>{
+                e.html($(g.target).val());
+                e.one('click', edit);
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <table>
+        <tr><td>One</td></tr>
+        <tr><td>Two</td></tr>
+        <tr><td>Three</td></tr>
+        <tr><td>...</td></tr>
+    </table>
+    <button>Button</button>
+</body>
+</html>
