@@ -1,0 +1,20 @@
+.main-header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 20px;
+}
+
+.main-header span {
+    font-size: 40px;
+    font-style: oblique;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.main-header #basket-button {
+    width: 50px;
+    height: 50px;
+}
